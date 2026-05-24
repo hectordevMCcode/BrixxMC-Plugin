@@ -1,2 +1,0 @@
-# BrixxMC-Plugin
-BrixxMC Plugin
