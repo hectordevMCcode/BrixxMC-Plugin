@@ -277,40 +277,48 @@ resource-pack:
 ## 8. Befehle & Berechtigungen
 
 ### Spieler-Befehle
-| Befehl | Beschreibung | Permission |
-|---|---|---|
-| `/brixxfish` | Hauptmenü öffnen | `brixxfishing.use` |
-| `/brixxfish sell` | Fisch-Verkaufs-GUI | `brixxfishing.use` |
-| `/brixxfish catalog` | Fisch-Katalog | `brixxfishing.use` |
-| `/brixxfish upgrades` | Upgrade-Menü | `brixxfishing.use` |
-| `/brixxfish stats` | Eigene Statistiken | `brixxfishing.use` |
-| `/brixxfish top` | Top-Angler-Liste | `brixxfishing.use` |
+- `/brixxfish` — Öffnet das Hauptmenü. Hier siehst du den aktuellen Status, Zugang zu Upgrades und den Fisch-Katalog.
+- `/brixxfish sell` — Öffnet die Verkaufs-GUI, um deine gefangenen Fische zu verkaufen.
+- `/brixxfish catalog` — Öffnet den Fisch-Katalog mit allen verfügbaren Fischen und ihren Werten.
+- `/brixxfish upgrades` — Öffnet das Upgrade-Menü, in dem du deine Angel verbessern kannst.
+- `/brixxfish stats` — Zeigt deine persönlichen Angel-Statistiken an (XP, Level, gefangene Fische usw.).
+- `/brixxfish top` — Zeigt die Top-Angler im Server an.
 
-**Aliase:** `/fish`, `/fishing`
+**Alias:** `/fish`, `/fishing` funktionieren ebenfalls als Kurzform.
 
 ### Admin-Befehle
-| Befehl | Beschreibung | Permission |
-|---|---|---|
-| `/brixxfish admin` | Admin-Hilfe anzeigen | `brixxfishing.admin` |
-| `/brixxfish admin reload` | Plugin neu laden | `brixxfishing.admin.reload` |
-| `/brixxfish admin setlevel <Spieler> <Level>` | Level setzen | `brixxfishing.admin.setlevel` |
-| `/brixxfish admin give <Spieler> <FischID> [Menge]` | Fisch geben | `brixxfishing.admin.give` |
-| `/brixxfish admin givemoney <Spieler> <Betrag>` | Geld geben | `brixxfishing.admin.give` |
-| `/brixxfish admin event start <ID> [Welt]` | Event starten | `brixxfishing.admin` |
-| `/brixxfish admin event stop <ID>` | Event stoppen | `brixxfishing.admin` |
-| `/brixxfish admin event stopall` | Alle Events stoppen | `brixxfishing.admin` |
-| `/brixxfish admin event list` | Aktive Events auflisten | `brixxfishing.admin` |
+- `/brixxfish admin` — Zeigt die Admin-Hilfe mit allen verfügbaren Admin-Unterbefehlen.
+- `/brixxfish admin reload` — Lädt das Plugin neu und liest alle Konfigurationsdateien erneut ein.
+- `/brixxfish admin setlevel <Spieler> <Level>` — Setzt das Angel-Level eines Spielers manuell.
+- `/brixxfish admin give <Spieler> <FischID> [Menge]` — Gibt einem Spieler einen oder mehrere Fische. Beispiel: `/brixxfish admin give Nikita karpfen 3`
+- `/brixxfish admin give rod <Typ> <Spieler>` — Gibt einem Spieler eine custom Angeln. Verfügbare Typen: `wood`, `gold`, `standard`, `premium`, `metal`.
+- `/brixxfish admin givemoney <Spieler> <Betrag>` — Gibt dem Spieler Geld in der Economy.
+- `/brixxfish admin event start <ID> [Welt]` — Startet ein Event global oder nur in der angegebenen Welt.
+- `/brixxfish admin event stop <ID>` — Stoppt ein bestimmtes Event.
+- `/brixxfish admin event stopall` — Stoppt alle laufenden Events.
+- `/brixxfish admin event list` — Zeigt alle aktuell aktiven Events an.
+
+### Erklärung weiterer Admin-Befehle
+- `/brixxfish admin reload`
+  - Nutze diesen Befehl nach Änderungen an `config.yml`, `fish.yml`, `events.yml` oder den Sprachdateien.
+- `/brixxfish admin setlevel`
+  - Setzt das Spieler-Level direkt, falls du XP oder Level manuell korrigieren möchtest.
+- `/brixxfish admin give rod <Typ> <Spieler>`
+  - Gibt eine Rute mit passender `custom_model_data`, so dass dein Resource Pack die richtige Angel-Textur darstellt.
+- `/brixxfish admin event start <ID> [Welt]`
+  - Beispiel: `/brixxfish admin event start double-payout` startet ein Event auf dem gesamten Server.
+  - Beispiel: `/brixxfish admin event start double-payout world_nether` startet das Event nur in der Welt `world_nether`.
+- `/brixxfish admin event stopall`
+  - Nutze das, wenn mehrere Events gleichzeitig aktiv sind und du schnell alles beenden willst.
 
 ### Berechtigungen-Übersicht
-| Permission | Standard | Beschreibung |
-|---|---|---|
-| `brixxfishing.use` | Alle Spieler | Grundlegende Plugin-Nutzung |
-| `brixxfishing.admin` | OP | Alle Admin-Befehle |
-| `brixxfishing.admin.reload` | OP | Reload-Berechtigung |
-| `brixxfishing.admin.setlevel` | OP | Level-Setz-Berechtigung |
-| `brixxfishing.admin.give` | OP | Give-Berechtigung |
+- `brixxfishing.use` — Ermöglicht normalen Spielern den Zugriff auf alle Spieler-Befehle und GUI-Funktionen.
+- `brixxfishing.admin` — Erlaubt den Zugriff auf die Admin-Hilfe und einige Admin-Unterbefehle.
+- `brixxfishing.admin.reload` — Erlaubt das Neuladen des Plugins, ohne OP zu sein.
+- `brixxfishing.admin.setlevel` — Erlaubt das Setzen von Spieler-Leveln.
+- `brixxfishing.admin.give` — Erlaubt das Geben von Items, Fischen und Geld.
 
-> **Tipp:** Mit einem Permissions-Plugin (LuckPerms etc.) kannst du einzelne Permissions gezielt vergeben, z.B. `brixxfishing.admin.reload` für Moderatoren.
+> **Tipp:** Vergib Admin-Rechte am besten nur an vertrauenswürdige Moderatoren. Bei Permissions-Plugins wie LuckPerms kannst du fein steuern, wer Reloads oder Give-Befehle verwenden darf.
 
 ---
 
