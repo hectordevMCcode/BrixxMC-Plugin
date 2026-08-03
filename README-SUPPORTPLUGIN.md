@@ -39,15 +39,15 @@
 
 ## Empfohlene Gruppen-Einstellungen
 
-### Moderator
+### mod
 ```
-/lp group moderator permission set stafftools.dispatch true
-/lp group moderator permission set stafftools.clearchat true
-/lp group moderator permission set stafftools.mute true
-/lp group moderator permission set stafftools.freeze true
-/lp group moderator permission set stafftools.staffchat true
-/lp group moderator permission set stafftools.vanish.mod true
-/lp group moderator permission set stafftools.vanish.see.mod true
+/lp group mod permission set stafftools.dispatch true
+/lp group mod permission set stafftools.clearchat true
+/lp group mod permission set stafftools.mute true
+/lp group mod permission set stafftools.freeze true
+/lp group mod permission set stafftools.staffchat true
+/lp group mod permission set stafftools.vanish.mod true
+/lp group mod permission set stafftools.vanish.see.mod true
 ```
 
 ### Admin
